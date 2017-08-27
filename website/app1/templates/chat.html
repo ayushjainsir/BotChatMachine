@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+    <!-- Latest compiled and minified CSS -->
+{% endblock %}
+{% block body %}
+  {% for user in alluser %}
+                <div  >
+                <h2>
+					<a style="color: white;"  href="{% url 'app1:msgbox' user.id %}">{{user.username   }}{{ user.pk }}</a>
+                </h2>
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

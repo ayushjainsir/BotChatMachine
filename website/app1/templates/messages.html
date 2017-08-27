@@ -1,0 +1,10 @@
+{% for msg in chat %}
+                        {% if msg.touser == reciever and msg.fromuser == sender %}
+                            <li class="text-right list-group-item">{{ msg.message }}@ {{ sender.first_name }}</li>
+                            {% endif %}
+                        {% if msg.fromuser == reciever and msg.touser == sender %}
+                            <li class="text-left list-group-item"> {{ reciever.first_name }} @{{ msg.message }}</li>
+                        {% endif %}
+         {% empty %}
+          <li class="text-right list-group-item">No messages yet!</li>
+{% endfor %}
